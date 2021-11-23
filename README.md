@@ -23,7 +23,7 @@
 - `API_HASH` : Your Telegram APP HASH, get this from https://my.telegram.org
 - `API_KEY` : Your Telegram APP API KEY, get this from https://my.telegram.org
 - `BOT_TOKEN` : Your bot token, generate it from https://t.me/BotFather
-- `CUTTLY_API` : Create an account on https://cutt.ly/register and generate an API KEY.
+
 - `WORKERS` : Number of threads to use, this depends on usage. 4 is the recommended (and default) amount, but your experience may vary.
 
 ## Credits
@@ -33,11 +33,11 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/TerminalWarlord/subtitle-downloader-bot.svg?style=social&label=Star)](https://github.com/TerminalWarlord/GoGoAnime-API) ![GitHub followers](https://img.shields.io/github/followers/TerminalWarlord.svg?style=social&label=Follow)
 
-[![Telegram Channel](https://img.shields.io/badge/Telegram-Channel-orange)](https://t.me/JayBeeBots)
+[![ GIT](https://img.shields.io/badge/Telegram-Channel-orange)](https://t.me/J_A_R_V_l_S)
 ![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/TerminalWarlord/Subtitle-Downloader-Bot)
 
 ---
 ### Star the Repo if you find it useful :heart:
-### © [JayBee](https://t.me/JayBeeBots)
+### © [JARV!S](https://t.me/J_A_R_V_l_S)
 #### All Rights Reserved
 ---
