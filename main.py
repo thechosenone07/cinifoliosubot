@@ -30,10 +30,10 @@ timestarted = timedelta(seconds=int(time.time()))
 
 @app.on_message(filters.command('start'))
 def start(client,message):
-    kb = [[InlineKeyboardButton('Channel 🛡', url="https://t.me/JayBeeBots"),InlineKeyboardButton('Support Group 🔰', url="https://t.me/JayBeeBotsSupport")]]
+    kb = [[InlineKeyboardButton('CHANNEL ⚜️', url="https://t.me/cinethetics"),InlineKeyboardButton('TaP ✨', url="https://telegra.ph/file/9b183571f3a5239b179e4.jpg")]]
     reply_markup = InlineKeyboardMarkup(kb)
-    app.send_message(chat_id=message.from_user.id, text=f"Hello there, I am a __**Subtitle Downloader Bot**__.\nGive me a Movie/Series name and I will fetch it from __**Subscene**__.\n\n"
-                                                        "__**Developer :**__ __@JayBeeDev__\n"
+    app.send_message(chat_id=message.from_user.id, text=f"Hello there, I am [MARVIN](https://telegra.ph/file/bcf8607682c91438314c0.jpg) Just a __**Subtitle Downloader Bot**__.\nGive me a Movie/Series name and I will fetch it __** AsaP... 👽**__.\n\n"
+                                                        "__**C!NIFOLIO :**__ __@cinifolio__\n"
                                                         "__**Language :**__ __Python__\n"
                                                         "__**Framework :**__ __🔥 Pyrogram__",
                      parse_mode='md',
@@ -41,13 +41,13 @@ def start(client,message):
 
 @app.on_message(filters.command('help'))
 def help(client,message):
-    url = [[InlineKeyboardButton(f"PayPal Me ❤️", url=f"https://paypal.me/JayBeeDev")],
-           [InlineKeyboardButton(f"Buy Me A Coffee ☕️", url=f"https://buymeacoffee.com/JayBee.Dev")]]
+    url = [[InlineKeyboardButton(f"C I N I F O L I O 🏷️", url=f"https://t.me/cinifolio")],
+           [InlineKeyboardButton(f" Refresh 🔁", url=f"t.me/cinifoliosubot")]]
     reply_markup = InlineKeyboardMarkup(url)
     message.reply_text(reply_to_message_id= message.message_id,text=f"Send me any Movie/Series name and I will -\n"
     f"__ * Search for it on `Subscene.com`\n"
     f" * Let you choose your preferable language.\n"
-    f" * Download the subtitle, unzip and upload in `.srt/.ass` format__", parse_mode='md', reply_markup=reply_markup)
+    f" * Download the subtitle, unzip and upload in🔁 `.srt/.ass` format__", parse_mode='md', reply_markup=reply_markup)
 
 
 @app.on_message(filters.command('uptime'))
