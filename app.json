@@ -9,7 +9,7 @@
     "subtitle",
     "jaybee"
   ],
-  "repository": "https://github.com/TerminalWarlord/Subtitle-Downloader-Bot",
+  "repository": "https://github.com/thechosenone07/cinifoliosubot",
   "website": "https://github.com/TerminalWarlord/Subtitle-Downloader-Bot",
   "env": {
     "BOT_TOKEN": {
