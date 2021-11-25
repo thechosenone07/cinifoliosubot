@@ -46,7 +46,7 @@ async def start(bot, update):
             )
             return
         except Exception:
-            await update.reply_text("Something Wrong. Contact Support)
+            await update.reply_text("Something Wrong. Contact Support")
             return
     kb = [[InlineKeyboardButton('CHANNEL ⚜️', url="https://t.me/cinethetics"),InlineKeyboardButton('TaP ✨', url="https://telegra.ph/file/9b183571f3a5239b179e4.jpg")]]
     reply_markup = InlineKeyboardMarkup(kb)
