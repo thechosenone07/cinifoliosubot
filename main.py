@@ -25,8 +25,9 @@ hash = os.environ.get('API_HASH')
 workers = int(os.environ.get('WORKERS'))
 app = Client("JayBeeSubtitleDL", bot_token=bot_token, api_id=api, api_hash=hash, workers=workers)
 cuttly = os.environ.get('CUTTLY_API')
-UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL", "")
 timestarted = timedelta(seconds=int(time.time()))
+
+UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL", "")
 
 @app.on_message(filters.command('start') & filters.private)
 async def start(bot, update):
@@ -50,7 +51,7 @@ async def start(bot, update):
             return
     kb = [[InlineKeyboardButton('CHANNEL ⚜️', url="https://t.me/cinethetics"),InlineKeyboardButton('TaP ✨', url="https://telegra.ph/file/9b183571f3a5239b179e4.jpg")]]
     reply_markup = InlineKeyboardMarkup(kb)
-    await update.reply_text(chat_id=update.from_user.id, text=f"Hello there, I am [MARVIN](https://telegra.ph/file/bcf8607682c91438314c0.jpg) Just a __**Subtitle Downloader Bot**__.\nGive me a Movie/Series name and I will fetch it __** AsaP... 👽**__.\n\n"
+    await update.reply_text(text=f"Hello there, I am [MARVIN](https://telegra.ph/file/bcf8607682c91438314c0.jpg) Just a __**Subtitle Downloader Bot**__.\nGive me a Movie/Series name and I will fetch it __** AsaP... 👽**__.\n\n"
                                                         "__**C!NIFOLIO :**__ __@cinifolio__\n"
                                                         "__**Language :**__ __Python__\n"
                                                         "__**Framework :**__ __🔥 Pyrogram__",
