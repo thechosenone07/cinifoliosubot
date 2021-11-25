@@ -25,7 +25,7 @@ hash = os.environ.get('API_HASH')
 workers = int(os.environ.get('WORKERS'))
 app = Client("JayBeeSubtitleDL", bot_token=bot_token, api_id=api, api_hash=hash, workers=workers)
 cuttly = os.environ.get('CUTTLY_API')
-update_channel = os.environ.get("UPDATE_CHANNEL", "")
+UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL", "")
 timestarted = timedelta(seconds=int(time.time()))
 
 @app.on_message(filters.command('start') & filters.private)
