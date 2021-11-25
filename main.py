@@ -16,6 +16,7 @@ import time
 from datetime import timedelta
 from dotenv import load_dotenv
 import zipfile
+from pyrogram.errors import UserNotParticipant
 
 load_dotenv()
 bot_token = os.environ.get('BOT_TOKEN')
@@ -24,12 +25,30 @@ hash = os.environ.get('API_HASH')
 workers = int(os.environ.get('WORKERS'))
 app = Client("JayBeeSubtitleDL", bot_token=bot_token, api_id=api, api_hash=hash, workers=workers)
 cuttly = os.environ.get('CUTTLY_API')
-
+update_channel = os.environ.get("UPDATE_CHANNEL", "")
 timestarted = timedelta(seconds=int(time.time()))
 
 
 @app.on_message(filters.command('start'))
-def start(client,message):
+async def start(client,message):
+        if UPDATE_CHANNEL:
+        try:
+            user = await bot.get_chat_member(UPDATE_CHANNEL, update.chat.id)
+            if user.status == "kicked":
+                await update.reply_text(text="You are banned!")
+                return
+        except UserNotParticipant:
+            await update.reply_text(
+		  text=FORCE_SUBSCRIBE_TEXT,
+		  reply_markup=InlineKeyboardMarkup(
+			  [[InlineKeyboardButton(text="Join Channel", url=f"https://telegram.me/{UPDATE_CHANNEL}")]]
+		  )
+	    )
+            return
+        except Exception as error:
+            print(error)
+            await update.reply_text(text="Something wrong. Contact Support Group", disable_web_page_preview=True)
+            return
     kb = [[InlineKeyboardButton('CHANNEL ⚜️', url="https://t.me/cinethetics"),InlineKeyboardButton('TaP ✨', url="https://telegra.ph/file/9b183571f3a5239b179e4.jpg")]]
     reply_markup = InlineKeyboardMarkup(kb)
     app.send_message(chat_id=message.from_user.id, text=f"Hello there, I am [MARVIN](https://telegra.ph/file/bcf8607682c91438314c0.jpg) Just a __**Subtitle Downloader Bot**__.\nGive me a Movie/Series name and I will fetch it __** AsaP... 👽**__.\n\n"
