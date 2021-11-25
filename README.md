@@ -29,7 +29,7 @@
 ## Credits
 - <a href="https://github.com/TerminalWarlord">TerminalWarlord</a>
 
-### Show some :heart: and :star: the repo to support the project
+### 
 
 [![GitHub stars](https://img.shields.io/github/stars/TerminalWarlord/subtitle-downloader-bot.svg?style=social&label=Star)](https://github.com/TerminalWarlord/GoGoAnime-API) ![GitHub followers](https://img.shields.io/github/followers/TerminalWarlord.svg?style=social&label=Follow)
 
