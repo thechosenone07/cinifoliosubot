@@ -28,30 +28,29 @@ cuttly = os.environ.get('CUTTLY_API')
 update_channel = os.environ.get("UPDATE_CHANNEL", "")
 timestarted = timedelta(seconds=int(time.time()))
 
-
-@app.on_message(filters.command('start'))
-async def start(client,message):
-        if UPDATE_CHANNEL:
+@app.on_message(filters.command('start') & filters.private)
+async def start(bot, update):
+    update_channel = UPDATE_CHANNEL
+    if update_channel:
         try:
-            user = await bot.get_chat_member(UPDATE_CHANNEL, update.chat.id)
-            if user.status == "kicked":
-                await update.reply_text(text="You are banned!")
-                return
+           user = await bot.get_chat_member(update_channel, update.chat.id)
+           if user.status == "kicked":
+               await update.reply_text("Sorry, You are **BANNED**")
+               return
         except UserNotParticipant:
             await update.reply_text(
-		  text=FORCE_SUBSCRIBE_TEXT,
-		  reply_markup=InlineKeyboardMarkup(
-			  [[InlineKeyboardButton(text="Join Channel", url=f"https://telegram.me/{UPDATE_CHANNEL}")]]
-		  )
-	    )
+                text="<b>Please Join MY Updates Channel To Use This Bot</b>",
+                reply_markup=InlineKeyboardMarkup([
+                    [ InlineKeyboardButton(text="Join Updates Channel", url=f"https://t.me/{update_channel}")]
+              ])
+            )
             return
-        except Exception as error:
-            print(error)
-            await update.reply_text(text="Something wrong. Contact Support Group", disable_web_page_preview=True)
+        except Exception:
+            await update.reply_text("Something Wrong. Contact Support)
             return
     kb = [[InlineKeyboardButton('CHANNEL ⚜️', url="https://t.me/cinethetics"),InlineKeyboardButton('TaP ✨', url="https://telegra.ph/file/9b183571f3a5239b179e4.jpg")]]
     reply_markup = InlineKeyboardMarkup(kb)
-    app.send_message(chat_id=message.from_user.id, text=f"Hello there, I am [MARVIN](https://telegra.ph/file/bcf8607682c91438314c0.jpg) Just a __**Subtitle Downloader Bot**__.\nGive me a Movie/Series name and I will fetch it __** AsaP... 👽**__.\n\n"
+    bot.send_message(chat_id=update.from_user.id, text=f"Hello there, I am [MARVIN](https://telegra.ph/file/bcf8607682c91438314c0.jpg) Just a __**Subtitle Downloader Bot**__.\nGive me a Movie/Series name and I will fetch it __** AsaP... 👽**__.\n\n"
                                                         "__**C!NIFOLIO :**__ __@cinifolio__\n"
                                                         "__**Language :**__ __Python__\n"
                                                         "__**Framework :**__ __🔥 Pyrogram__",
