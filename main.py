@@ -50,7 +50,7 @@ async def start(bot, update):
             return
     kb = [[InlineKeyboardButton('CHANNEL ⚜️', url="https://t.me/cinethetics"),InlineKeyboardButton('TaP ✨', url="https://telegra.ph/file/9b183571f3a5239b179e4.jpg")]]
     reply_markup = InlineKeyboardMarkup(kb)
-    bot.send_message(chat_id=update.from_user.id, text=f"Hello there, I am [MARVIN](https://telegra.ph/file/bcf8607682c91438314c0.jpg) Just a __**Subtitle Downloader Bot**__.\nGive me a Movie/Series name and I will fetch it __** AsaP... 👽**__.\n\n"
+    await update.reply_text(chat_id=update.from_user.id, text=f"Hello there, I am [MARVIN](https://telegra.ph/file/bcf8607682c91438314c0.jpg) Just a __**Subtitle Downloader Bot**__.\nGive me a Movie/Series name and I will fetch it __** AsaP... 👽**__.\n\n"
                                                         "__**C!NIFOLIO :**__ __@cinifolio__\n"
                                                         "__**Language :**__ __Python__\n"
                                                         "__**Framework :**__ __🔥 Pyrogram__",
